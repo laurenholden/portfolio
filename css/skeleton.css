@@ -308,12 +308,18 @@ h6 {
 
 a {
     text-decoration: none;
-    color: black;
+
 }
     
-a:hover {
+  p a:active{
+        text-decoration: none;
+        color: black;
+    }
     
-}
+  p a:visited{
+        color: black;
+    } 
+    
 p a {
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
@@ -379,15 +385,12 @@ u{
     text-decoration: none;
     padding-bottom: 0px;
 }
-
-    .footer{
-        margin-top: 10%;
-    }
     
     .main{
         margin-left: 0;
     }
     
+
   
 /* Custom Hover
 –––––––––––––––––––––––––––––––––––––––––––––––––– */  
@@ -571,12 +574,15 @@ label > .label-body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 ul {
+    text-decoration: none;
+    color: black;
 }
 ol {
 }
 ol,
 ul {
     padding-left: 0;
+    text-decoration: none;
 }
 ul ul,
 ul ol,
@@ -714,6 +720,7 @@ there.
         margin-top: 10%;
         margin-bottom: 10%;
     }
+
     }
 
 /* Larger than phablet (also point when grid becomes active) */
