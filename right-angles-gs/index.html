@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>right angles</title>
+
+	<link rel="shortcut icon" type="image/ico" href="favicon.png" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<!--Uncomment the script below to reveal the triggers!
+
+	 <script type="text/javascript" src="scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script> -->
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+        <img class="three columns above" src="assets/clock.gif">
+      <img class="two columns offset-by-three below" src="assets/everything11.png">  
+      <img class="four columns above" style="transform: rotate(90deg);" src="assets/everything11.png">
+    <img class="one column below" style="margin-top: 20em;" src="assets/graph.jpg">
+    <img class="two columns above" style="margin-top: 50em;" src="assets/building.jpg">
+    <img class="two columns above offset-by-two" src="assets/crane.jpg">
+     <img class="two columns above" style="margin-top: 30em; margin-left: -100px; transform: rotate(90deg);" src="assets/clock.gif">
+    <img class="one column below" style="margin-top: 60em;" src="assets/clock2.gif">
+    <img class="one column below" src="assets/clock2.gif">
+    <img class="one column below" style="margin-top: 40em;" src="assets/clock2.gif">
+    <img class="four columns bottom" src="assets/clock.gif">
+
+    <img class="six columns below" style="margin-top: 40em;" src="assets/faces.gif">
+    <img class="three columns below" style="margin-top: 100%;" src="assets/flower1.png">
+    <img class="five columns bottom" style="margin-top: 200%;" src="assets/flower7.png">
+    <img class="five columns bottom" style="margin-top: 190%;" src="assets/flower3.png">
+    <img class="five columns offset-by-four bottom" style="margin-top: 100%;" src="assets/flower5.png">
+     <img class="three columns above" src="assets/flower1.png">
+    <img class="four columns above offset-by-two" src="assets/flower7.png">
+    <img class="five columns below" style="margin-left: -8%; transform: rotate(90deg); margin-top: -10%;" src="assets/flower3.png">
+     <img class="ten columns bottom" style="margin-top: 100%;" src="assets/flower4.png">
+    
+			<div id="trigger"></div>
+<div class="row">
+    <div id="slider-container" class="twelve columns">
+            <div id="slider">				
+                <div id="imagesequence">
+					<img id="myimg" src="assets/everything-01.svg">
+				</div>
+            </div>
+        </div>  
+    </div>
+			<script>
+				// define images
+				var images = [
+					"assets/everything-01.svg",
+					"assets/everything-02.svg",
+					"assets/everything-03.svg",
+					"assets/everything-04.svg",
+                    "assets/everything-05.svg",
+                    "assets/everything-06.svg",
+                    "assets/everything-07.svg",
+                    "assets/everything-08.svg",
+                    "assets/everything-09.svg",
+                    "assets/everything-10.svg",
+                    "assets/everything-11.svg",
+                    "assets/everything-12.svg",
+                    "assets/everything-13.svg",
+                    "assets/everything-14.svg",
+                    "assets/everything-15.svg",
+                    "assets/everything-16.svg",
+                    "assets/everything-17.svg",
+					"assets/everything-18.svg",
+					"assets/everything-19.svg",
+                    "assets/everything-20.svg",
+                    "assets/everything-21.svg",
+                    "assets/everything-22.svg",
+                    "assets/everything-23.svg", 
+                    "assets/everything-26.svg",
+                    "assets/everything-27.svg",
+                    "assets/everything-28.svg",
+                    "assets/everything-29.svg",
+                    "assets/everything-30.svg",
+                    "assets/everything-31.svg",
+                    "assets/everything-32.svg",
+					"assets/everything-33.svg",
+					"assets/everything-34.svg",
+					"assets/everything-35.svg",
+                    "assets/everything-36.svg",
+                    "assets/everything-37.svg",
+                    "assets/everything-38.svg",
+                    "assets/everything-39.svg",
+                    "assets/everything-40.svg",
+                    "assets/everything-41.svg",
+                    "assets/everything-42.svg",
+                    "assets/everything-43.svg",
+                    "assets/everything-44.svg",
+                    "assets/everything-45.svg",
+                    "assets/everything-46.svg",
+                    "assets/everything-47.svg",
+                    "assets/everything-48.svg",
+					"assets/everything-49.svg",
+					"assets/everything-50.svg",
+                    "assets/everything-51.svg",
+					"assets/everything-52.svg"
+					
+				];
+
+				// TweenMax can tween any property of any object. We use this object to cycle through the array
+				var obj = {curImg: 0};
+
+				// create tween
+				var tween = TweenMax.to(obj, 1,
+					{
+						curImg: images.length - 1,	// animate propery curImg to number of images
+						roundProps: "curImg",				// only integers so it can be used as an array index
+						repeat: 0,									// repeat 3 times
+						immediateRender: true,			// load first image automatically
+						ease: Linear.easeInSine,			// show every image the same ammount of time
+						onUpdate: function () {
+						  $("#myimg").attr("src", images[obj.curImg]); // set the image source
+						}
+					}
+				);
+
+				// init controller
+				var controller = new ScrollMagic.Controller();
+
+				// build scene
+				var scene = new ScrollMagic.Scene({triggerhook: "#trigger", duration: 11000})
+								.setTween(tween)
+								.addIndicators() // add indicators (requires plugin)
+								.addTo(controller);
+
+				// handle form change
+				$("form.move input[name=duration]:radio").change(function () {
+					scene.duration($(this).val());
+				});
+			</script>	
+			
+
+<!--New images on load -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+
+</body>
+
+
