@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>intimacy</title>
+
+	<link rel="shortcut icon" type="image/ico" href="favicon.png" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<!--Uncomment the script below to reveal the triggers!
+
+	 <script type="text/javascript" src="scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script> -->
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+</head>
+
+<body style="height: 14000px;">
+    <img class="u-full-width" style="position: fixed;" src="assets/hands2.gif">
+<div class="container">
+			<div id="trigger"></div>
+<div class="row">
+    <div id="slider-container" class="twelve columns">
+            <div id="slider">				
+                <div id="imagesequence">
+					<img id="myimg" src="assets/intimacy-01.svg">
+				</div>
+            </div>
+        </div>  
+    </div>
+    </div>
+			<script>
+				// define images
+				var images = [
+					"assets/intimacy-01.svg",
+					"assets/intimacy-02.svg",
+					"assets/intimacy-03.svg",
+					"assets/intimacy-04.svg",
+                    "assets/intimacy-05.svg",
+                    "assets/intimacy-07.svg",
+                    "assets/intimacy-08.svg",
+                    "assets/intimacy-09.svg",
+                    "assets/intimacy-10.svg",
+                    "assets/intimacy-11.svg",
+                    "assets/intimacy-12.svg",
+                    "assets/intimacy-13.svg",
+                    "assets/intimacy-14.svg",
+                    "assets/intimacy-15.svg",
+                    "assets/intimacy-16.svg",
+                    "assets/intimacy-17.svg",
+					"assets/intimacy-18.svg",
+					"assets/intimacy-19.svg",
+                    "assets/intimacy-20.svg",
+                    "assets/intimacy-21.svg",
+                    "assets/intimacy-22.svg",
+                    "assets/intimacy-23.svg", 
+                    "assets/intimacy-24.svg", 
+                    "assets/intimacy-25.svg", 
+                    "assets/intimacy-26.svg",
+                    "assets/intimacy-27.svg",
+                    "assets/intimacy-28.svg",
+                    "assets/intimacy-29.svg",
+                    "assets/intimacy-30.svg",
+                    "assets/intimacy-31.svg",
+                    "assets/intimacy-32.svg",
+					"assets/intimacy-33.svg",
+					"assets/intimacy-34.svg",
+					"assets/intimacy-35.svg",
+                    "assets/intimacy-36.svg",
+                    "assets/intimacy-37.svg",
+                    "assets/intimacy-38.svg",
+					"assets/intimacy-39.svg"
+				];
+
+				// TweenMax can tween any property of any object. We use this object to cycle through the array
+				var obj = {curImg: 0};
+
+				// create tween
+				var tween = TweenMax.to(obj, 1,
+					{
+						curImg: images.length - 1,	// animate propery curImg to number of images
+						roundProps: "curImg",				// only integers so it can be used as an array index
+						repeat: 0,									// repeat 3 times
+						immediateRender: true,			// load first image automatically
+						ease: Linear.easeInSine,			// show every image the same ammount of time
+						onUpdate: function () {
+						  $("#myimg").attr("src", images[obj.curImg]); // set the image source
+						}
+					}
+				);
+
+				// init controller
+				var controller = new ScrollMagic.Controller();
+
+				// build scene
+				var scene = new ScrollMagic.Scene({triggerhook: "#trigger", duration: 11000})
+								.setTween(tween)
+								.addIndicators() // add indicators (requires plugin)
+								.addTo(controller);
+
+				// handle form change
+				$("form.move input[name=duration]:radio").change(function () {
+					scene.duration($(this).val());
+				});
+			</script>	
+			
+
+<!--New images on load -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+
+</body>
+
+

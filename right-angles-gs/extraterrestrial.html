@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>extraterrestrial</title>
+
+	<link rel="shortcut icon" type="image/ico" href="favicon.png" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<!--Uncomment the script below to reveal the triggers!
+
+	 <script type="text/javascript" src="scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script> -->
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+</head>
+
+<body style="height: 14000px;">
+<div class="container">
+    <img class="six columns offset-by-three bottom" style="position: absolute; margin-top: 800px;" src="assets/girlshands.png"> 
+     <img class="six columns offset-by-four below" style="position: absolute; margin-top: 900px;" src="assets/girlshands.gif">
+    <img class="six columns offset-by-five above" style="position: absolute; margin-top: 1050px;" src="assets/girlshands.gif">
+    <img class="six columns offset-by-three below" style="position: absolute; margin-top: 3100px; transform: rotate(90deg);" src="assets/shadow2-hole.png">
+    <img class="two columns offset-by-eight bottom" style="position: absolute; margin-top: 4000px; transform: rotate(180deg);" src="assets/shadow2.jpg">
+    <img class="one columns offset-by-eight bottom" style="position: absolute; margin-top: 4500px; transform: rotate(270deg);" src="assets/shadow2.jpg">
+        <img class="three columns offset-by-five bottom" style="position: absolute; margin-top: 6500px;" src="assets/house.png">
+    <img class="eight columns offset-by-five bottom" style="position: absolute; margin-top: 8000px; transform: rotate(180deg);" src="assets/landscape.jpg">
+    <img class="six columns bottom" style="position: absolute; margin-top: 13400px; transform: rotate(90deg);" src="assets/womaneye.gif">
+
+			<div id="trigger"></div>
+<div class="row">
+    <div id="slider-container" class="twelve columns">
+            <div id="slider">				
+                <div id="imagesequence">
+					<img id="myimg" src="assets/intimacy-01.svg">
+				</div>
+            </div>
+        </div>  
+    </div>
+    </div>
+			<script>
+				// define images
+				var images = [
+					"assets/extra-01.svg",
+					"assets/extra-02.svg",
+					"assets/extra-03.svg",
+					"assets/extra-04.svg",
+                    "assets/extra-05.svg",
+                    "assets/extra-07.svg",
+                    "assets/extra-08.svg",
+                    "assets/extra-09.svg",
+                    "assets/extra-10.svg",
+                    "assets/extra-11.svg",
+                    "assets/extra-12.svg",
+                    "assets/extra-13.svg",
+                    "assets/extra-14.svg",
+                    "assets/extra-15.svg",
+                    "assets/extra-16.svg",
+                    "assets/extra-17.svg",
+					"assets/extra-18.svg",
+					"assets/extra-19.svg",
+                    "assets/extra-20.svg",
+                    "assets/extra-21.svg",
+                    "assets/extra-22.svg",
+                    "assets/extra-23.svg", 
+                    "assets/extra-24.svg", 
+                    "assets/extra-25.svg", 
+                    "assets/extra-26.svg",
+                    "assets/extra-27.svg",
+                    "assets/extra-28.svg",
+                    "assets/extra-29.svg",
+                    "assets/extra-30.svg",
+                    "assets/extra-31.svg",
+                    "assets/extra-32.svg",
+					"assets/extra-33.svg",
+					"assets/extra-34.svg",
+					"assets/extra-35.svg",
+                    "assets/extra-36.svg",
+                    "assets/extra-37.svg",
+                    "assets/extra-38.svg",
+                    "assets/extra-39.svg",
+                    "assets/extra-40.svg",
+					"assets/extra-41.svg",
+					"assets/extra-42.svg",
+					"assets/extra-43.svg",
+                    "assets/extra-44.svg",
+                    "assets/extra-45.svg",
+					"assets/extra-46.svg"
+				];
+
+				// TweenMax can tween any property of any object. We use this object to cycle through the array
+				var obj = {curImg: 0};
+
+				// create tween
+				var tween = TweenMax.to(obj, 1,
+					{
+						curImg: images.length - 1,	// animate propery curImg to number of images
+						roundProps: "curImg",				// only integers so it can be used as an array index
+						repeat: 0,									// repeat 3 times
+						immediateRender: true,			// load first image automatically
+						ease: Linear.easeInSine,			// show every image the same ammount of time
+						onUpdate: function () {
+						  $("#myimg").attr("src", images[obj.curImg]); // set the image source
+						}
+					}
+				);
+
+				// init controller
+				var controller = new ScrollMagic.Controller();
+
+				// build scene
+				var scene = new ScrollMagic.Scene({triggerhook: "#trigger", duration: 11000})
+								.setTween(tween)
+								.addIndicators() // add indicators (requires plugin)
+								.addTo(controller);
+
+				// handle form change
+				$("form.move input[name=duration]:radio").change(function () {
+					scene.duration($(this).val());
+				});
+			</script>	
+			
+
+<!--New images on load -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+
+</body>
+
+
