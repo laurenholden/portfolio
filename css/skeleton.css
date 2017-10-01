@@ -193,6 +193,7 @@ body {
     font-weight: 300;
     font-style: normal;
     color: #222;
+    margin-bottom: 0;
 }
 img {
     width: 100%;
@@ -256,7 +257,7 @@ h4 {
 
 h5 {
     font-family: 'GTSectra-Book';
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1;
     letter-spacing: -.05rem;
     margin-bottom: 1%;
@@ -269,6 +270,15 @@ h6 {
     margin-top: -5%;
 }
 
+.about-link {
+    font-family: 'GTSectra-BookItalic';
+}
+
+.about-link:hover{
+    font-family: 'GTSectra-Book';
+}
+
+
 /* Larger than phablet */
 
 @media (min-width: 550px) {
@@ -280,6 +290,7 @@ h6 {
         font-weight: 300;
         font-style: normal;
     }
+
     h1 {
         font-size: 2.0rem;
     }
@@ -333,7 +344,6 @@ p a:before {
     bottom: -3px;
     width: 100%;
     height: 1px;
-    background-color: pink;
     -webkit-transform: scale(0);
     transform: scale(0);
     -webkit-transition: .6s ease-in-out;
@@ -348,7 +358,6 @@ p a:hover:before {
   bottom: -3px;
   width: 100%;
   height: 1px;
-  background: pink;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
@@ -391,6 +400,78 @@ u{
     }
     
 
+.level100{
+    position: absolute;
+    z-index: 100;
+}
+
+.header{
+    z-index: 50;
+    position: fixed; 
+    margin-top:20%;
+}
+
+.header:hover{
+    z-index:1000;
+}
+
+
+@keyframes floaty {
+  0%   { transform: translate(0px,0px); }
+  33%  { transform: translate(30px,40px); }
+  66% { transform: translate(-15px,20px);}
+  100% { transform: translate(0px,0px);}
+}
+@-o-keyframes floaty{
+  0%   { transform: translate(0px,0px); }
+  33%  { transform: translate(30px,40px); }
+  66% { transform: translate(-15px,20px);}
+  100% { transform: translate(0px,0px);}
+}
+@-moz-keyframes floaty{
+  0%   { transform: translate(0px,0px); }
+  33%  { transform: translate(30px,40px); }
+  66% { transform: translate(-15px,20px);}
+  100% { transform: translate(0px,0px);}
+}
+
+@-webkit-keyframes floaty{
+  0%   { transform: translate(0px,0px); }
+  33%  { transform: translate(30px,40px); }
+  66% { transform: translate(-15px,20px);}
+  100% { transform: translate(0px,0px);}
+}
+
+.floating {
+   -webkit-animation: floaty 10s infinite ease-in-out;
+   -moz-animation: floaty 10s infinite ease-in-out;
+   -o-animation: floaty 10s infinite ease-in-out;
+    animation: floaty 10s infinite ease-in-out;
+}
+
+@-webkit-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fading {
+  -webkit-animation: fade 2s 1; /* Safari 4+ */
+  -moz-animation:    fade 2s 1; /* Fx 5+ */
+  -o-animation:      fade 2s 1; /* Opera 12+ */
+  animation:         fade 2s 1; /* IE 10+, Fx 29+ */
+}
   
 /* Custom Hover
 –––––––––––––––––––––––––––––––––––––––––––––––––– */  
@@ -407,7 +488,7 @@ u{
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 2px;
+    height: 1px;
     width: 0;
     transition: width 0s ease, background .5s ease;
 }
@@ -417,7 +498,7 @@ u{
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 2px;
+    height: 1px;
     width: 0;
     background: black;
     transition: width .5s ease;
