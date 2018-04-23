@@ -1,0 +1,81 @@
+@import "compass/css3";
+
+a {
+  display: block;
+  position: relative;
+}
+.hover-on a:focus .product-hover, .hover-on a:hover .product-hover {
+  opacity: 1;
+}
+
+img {
+  display: block;
+}
+
+
+.galleryimg{
+  position: absolute;
+}
+
+.mouse{
+  width: 50px; 
+  bottom: -20px; 
+  right: 10px; 
+  position: absolute;
+}
+
+.pointer{
+  width: 75px; 
+  bottom: 20px; 
+  right: 30px; 
+  position: absolute;
+}
+
+.smile{
+  width: 60px; 
+  bottom: 20px; 
+  right: 40px; 
+  position: absolute;
+}
+
+.above{
+  z-index: 10;
+}
+
+.below{
+  z-index: 0;
+}
+
+.bop {
+  -webkit-animation: bop 8s infinite linear; /* Safari 4+ */
+  -moz-animation:    bop 8s infinite linear; /* Fx 5+ */
+  -o-animation:      bop 8s infinite linear; /* Opera 12+ */
+  animation:         bop 8s infinite linear; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes bop {
+  0%   { transform: translate(0,0);}
+    50%  { transform: translate(10px,25px);}
+    75%  { transform: translate(30px,15px);}
+  100% { transform: translate(0, 0);}
+}
+@-moz-keyframes bop {
+  0%   { transform: translate(0,0);}
+    50%  { transform: translate(10px,25px);}
+    75%  { transform: translate(30px,15px);}
+  100% { transform: translate(0, 0);}
+}
+
+@-o-keyframes bop {
+  0%   { transform: translate(0,0);}
+    50%  { transform: translate(10px,25px);}
+    75%  { transform: translate(30px,15px);}
+  100% { transform: translate(0, 0);}
+}
+
+@keyframes bop {
+  0%   { transform: translate(0,0);}
+    50%  { transform: translate(10px,25px);}
+    75%  { transform: translate(30px,15px);}
+  100% { transform: translate(0, 0);}
+}

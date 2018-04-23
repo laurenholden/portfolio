@@ -1,0 +1,60 @@
+@import "compass/css3";
+
+body {
+  font: 1em/1.2 arial;
+  padding: 2em;
+}
+
+h1 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.wrap {
+  min-height: 400px;
+  color: #000;
+}
+
+a {
+  display: block;
+  min-height: 300px;
+  position: relative;
+  .hover-on & {
+    &:focus, &:hover {
+      .product-hover {
+          opacity: 1;
+       }
+    }
+  }
+}
+
+img {
+  display: block;
+}
+
+.product-hover {
+  //Display for all (including touch) devices by default
+  opacity: 1;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: #fff;
+  width: 270px;
+  -webkit-transition: opacity 0.2s linear;
+	-moz-transition: opacity 0.2s linear;
+	-ms-transition: opacity 0.2s linear;
+	-o-transition: opacity 0.2s linear;;
+	transition: opacity 0.2s linear;
+  
+  .hover-on & {
+    //Hide after mousemove fires
+    opacity: 0;
+  }
+  
+  h2, p {
+    padding: 8px;
+    background: black;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+}
