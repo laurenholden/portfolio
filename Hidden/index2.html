@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>a pixel can't take up space</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css"><
+  <link rel="stylesheet" href="css/font/font.css" type="text/css" charset="utf-8">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+   
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
+   <script type="text/javascript" src="scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script type="text/javascript" src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="build/blotter.min.js"></script>
+  <script src="build/materials/liquidDistortMaterial.js"></script>
+   <script src="build/materials/FliesMaterial.js"></script>
+
+
+
+</head>
+<body style="background-color:#8afd0f;">
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 
+
+
+
+   <div class="container" style="height: 20000px;">  
+   <div class="row"> 
+
+      <img class="eight columns" alt="street view" src="images/streetview.gif" style="position: absolute; top: 200px;z-index: 10;">
+      <img class="six columns offset-by-two bop" alt="weather" src="images/weather.gif" style="position: absolute; top: 550px;z-index: 10;">
+      <img class="eight columns offset-by-four" alt="wikipedia" src="images/wikipedia.png" style="position: absolute; top: 1600px;z-index: 20;">
+      <img class="seven columns offset-by-two bop" alt="youtube" src="images/youtube.png" style="position: absolute; top: 2000px;z-index: 0;">
+      <img class="nine columns float offset-by-six" alt="nfb" src="images/nfb.png" style="position: absolute; top: 2600px; z-index: 20;">
+      <img class="eight columns bop" alt="nfb" src="images/googlemap.gif" style="position: absolute; top: 2900px; z-index: 0;">
+      <img class="twelve columns float" alt="google image search" src="images/googleimagesearch.gif" style="position: absolute; top: 4250px; z-index: 0;">
+
+      <div class="nine columns offset-by-three" style="position: absolute; z-index: 20; top: 4750px;" id="urhere"></div>
+
+      <div class="ten columns offset-by-one bop" style="position: absolute; z-index: 100; top: 6000px;" id="canyou"></div>
+      <div class="ten columns offset-by-two float" style="position: absolute; z-index: 100; top: 6070px;" id="likeyou"></div>
+      <div class="ten columns offset-by-two bop" style="position: absolute; z-index: 100; top:6140px;" id="curveof"></div>
+
+
+      <img class="four columns bop" alt="iphone1" src="images/iphone1.jpg" style="position: absolute; top: 6500px; z-index: 20;">
+      <img class="three columns offset-by-six float" alt="weather" src="images/iphone2.jpg" style="position: absolute; top: 6800px; z-index: 0;">
+      <img class="three columns offset-by-nine bop" alt="weather" src="images/iphone3.jpg" style="position: absolute; top: 7500px; z-index: 0;">
+          <img class="three columns offset-by-six float" alt="weather" src="images/iphone4.jpg" style="position: absolute; top: 7700px; z-index: 0;">
+             <img class="four columns float" alt="weather" src="images/iphone5.jpg" style="position: absolute; top: 7800px; z-index: 0;">
+
+
+       <div class="ten columns bop" id="noonecares" style="position: absolute; z-index: 100; top: 9700px;"></div>
+       <div class="ten columns float" id="yourvacation" style="position: absolute; z-index: 100; top: 9800px;"></div>
+
+
+     <!-- <img class="twelve columns float" alt="google image search" src="images/tripadvisor.png" style="position: relative; top: 7200px; z-index: 0; transform: rotateX(60deg);">-->
+
+      <img class="seven columns bop" alt="google image search" src="images/westbynature.gif" style="position: relative; top: 8200px; z-index: 0;">
+      <img class="ten columns offset-by-two" alt="norris point" src="images/norrispoint.gif" style="position: relative; top: 8600px; z-index: 0; transform: rotate(60deg);">
+
+  	<div class="six columns offset-by-two" style="position: absolute; z-index: 100; top:8800px; transform: rotate(30deg);" id="nothing"></div>
+  	<div class="six columns offset-by-two" style="position: absolute; z-index: 100; top:8860px; transform: rotate(25deg);" id="could"></div>
+
+    <div class="eight columns" style="position: absolute; z-index: 100; top:7300px; transform: rotate(-30deg);" id="myfinger"></div>
+    <div class="eight columns offset-by-two" style="position: absolute; z-index: 100; top:7560px; left: 200px; transform: rotate(60deg);" id="astranger"></div>
+
+    <img class="ten columns offset-by-two" alt="map" src="images/map.gif" style="position: relative; top: 8900px; z-index: 20; transform: rotate(-60deg);">
+    <img class="eight columns offset-by-two bop" alt="map" src="images/grosmorne.gif" style="position: relative; top: 9000px; z-index: 0; transform: rotate(20deg);"
+    >
+        <img class="twelve columns float" alt="map" src="images/greatsombre.gif" style="position: relative; top: 6500px; z-index: 20; transform: rotate(20deg);">
+
+    <img class="twelve columns float" alt="map" src="images/flickr.gif" style="position: relative; top: 9200px; z-index: 0; transform: rotate(20deg);">
+    <img class="six columns bop" alt="map" src="images/cards.gif" style="position: relative; top: 9600px; z-index: 20; transform: rotate(20deg);">
+
+
+  	<div class="twelve columns" id="wecarry" style="position: absolute; z-index: 100; top: 16600px;  transform: rotate(10deg);"></div>
+  	<div class="twelve columns" id="weoccupy" style="position: absolute; z-index: 100; top: 16680px;  transform: rotate(10deg);"></div>
+
+
+  </div>
+</div>
+
+ <div id="trigger"></div>
+<div class="row">
+    <div id="slider-container" class="u-full-width" style="margin-top: 5%; z-index: 10;">
+            <div id="slider">
+                <div id="imagesequence">
+                    <img id="myimg" alt="a pixel can't take up space" src="assets/one/one-01.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script>
+                // define images
+                var images = [
+                    "assets/one/one-01.svg",
+                    "assets/one/one-02.svg",
+                    "assets/one/one-03.svg",
+                    "assets/one/one-04.svg",
+                    "assets/one/one-05.svg",
+                    "assets/one/one-06.svg",
+                    "assets/one/one-07.svg",
+                    "assets/one/one-08.svg",
+                    "assets/one/one-09.svg",
+                    "assets/one/one-10.svg",
+                    "assets/one/one-11.svg",
+                    "assets/two/two-01.svg",
+                    "assets/two/two-02.svg",
+                    "assets/two/two-03.svg",
+                    "assets/two/two-04.svg",
+                    "assets/two/two-05.svg",
+                    "assets/two/two-06.svg",
+                    "assets/two/two-07.svg",
+                    "assets/two/two-08.svg",
+                    "assets/two/two-09.svg",
+                    "assets/two/two-10.svg",
+                    "assets/two/two-11.svg",
+                    "assets/two/two-12.svg",
+                    "assets/two/two-13.svg",
+                    "assets/two/two-14.svg",
+                    "assets/two/two-15.svg",
+                    "assets/two/two-16.svg",
+                    "assets/two/two-17.svg",
+                    "assets/two/two-18.svg",
+                    "assets/two/two-19.svg",
+                    "assets/two/two-20.svg",
+                    "assets/two/two-21.svg",
+                    "assets/two/two-22.svg",
+                    "assets/two/two-23.svg",
+                    "assets/two/two-24.svg",
+                    "assets/two/two-25.svg",
+                    "assets/two/two-26.svg",
+                    "assets/two/two-27.svg",
+                    "assets/two/two-28.svg",
+                    "assets/two/two-29.svg",
+                    "assets/two/two-30.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/blank.svg",
+                    "assets/three/three-01.svg",
+                    "assets/three/three-02.svg",
+                    "assets/three/three-03.svg",
+                    "assets/three/three-04.svg",
+                    "assets/three/three-05.svg",
+                    "assets/three/three-06.svg",
+                    "assets/three/three-07.svg",
+                    "assets/three/three-08.svg",
+                    "assets/three/three-09.svg",
+                    "assets/three/three-10.svg",
+                    "assets/three/three-11.svg",
+                    "assets/three/three-12.svg",
+                    "assets/three/three-13.svg",
+                    "assets/three/three-14.svg",
+                    "assets/three/three-15.svg",
+                    "assets/three/three-16.svg",
+                    "assets/three/three-17.svg",
+                    "assets/three/three-18.svg",
+                    "assets/three/three-19.svg",
+                    "assets/three/three-20.svg",
+                    "assets/three/three-21.svg",
+                    "assets/three/three-22.svg",
+                    "assets/three/three-23.svg",
+                    "assets/three/three-24.svg",
+                    "assets/three/three-25.svg",
+                    "assets/three/three-26.svg",
+                    "assets/three/three-27.svg",
+                    "assets/four/four-01.svg",
+                    "assets/four/four-02.svg",
+                    "assets/four/four-03.svg",
+                    "assets/four/four-04.svg",
+                    "assets/four/four-05.svg",
+                    "assets/four/four-06.svg",
+                    "assets/four/four-07.svg",
+                    "assets/four/four-08.svg",
+                    "assets/four/four-09.svg",
+                    "assets/four/four-10.svg",
+                    "assets/four/four-11.svg",
+                    "assets/four/four-12.svg",
+                    "assets/four/four-13.svg",
+                    "assets/four/four-14.svg",
+                    "assets/four/four-15.svg",
+                    "assets/four/four-16.svg",
+                    "assets/four/four-17.svg",
+                    "assets/four/four-18.svg",
+                    "assets/four/four-19.svg",
+                    "assets/four/four-20.svg",
+                    "assets/four/four-21.svg",
+                    "assets/four/four-22.svg",
+                    "assets/four/four-23.svg",
+                    "assets/four/four-24.svg",
+                    "assets/four/four-25.svg",
+                    "assets/four/four-26.svg",
+                    "assets/four/four-27.svg",
+                    "assets/four/four-28.svg",
+                    "assets/four/four-29.svg",
+                    "assets/four/four-30.svg",
+                    "assets/four/four-31.svg",
+                    "assets/four/four-32.svg",
+                    "assets/four/four-33.svg",
+                    "assets/four/four-34.svg",
+                    "assets/four/four-35.svg",
+                    "assets/four/four-36.svg",
+                    "assets/four/four-37.svg",
+                    "assets/four/four-38.svg",
+                    "assets/four/four-39.svg",
+                    "assets/four/four-40.svg",
+                    "assets/four/four-41.svg",
+                    "assets/four/four-42.svg",
+                    "assets/four/four-43.svg",
+                    "assets/four/four-44.svg",
+                    "assets/four/four-45.svg",
+                    "assets/four/four-46.svg",
+                    "assets/four/four-47.svg",
+                    "assets/four/four-48.svg"
+
+                ];
+
+                // TweenMax can tween any property of any object. We use this object to cycle through the array
+                var obj = {curImg: 0};
+
+                // create tween
+                var tween = TweenMax.to(obj, 1,
+                    {
+                        curImg: images.length - 1,  // animate propery curImg to number of images
+                        roundProps: "curImg",       // only integers so it can be used as an array index
+                        repeat: 0,                  // repeat 3 times
+                        immediateRender: true,      // load first image automatically
+                        ease: Linear.easeInSine,      // show every image the same ammount of time
+                        onUpdate: function () {
+                          $("#myimg").attr("src", images[obj.curImg]); // set the image source
+                        }
+                    }
+                );
+
+                // init controller
+                var controller = new ScrollMagic.Controller();
+
+                // build scene
+                var scene = new ScrollMagic.Scene({triggerhook: "#trigger", duration: 20000})
+                                .setTween(tween)
+                                .addIndicators() // add indicators (requires plugin)
+                                .addTo(controller);
+
+                // handle form change
+                $("form.move input[name=duration]:radio").change(function () {
+                    scene.duration($(this).val());
+                });
+            </script>    
+            <script>
+            $('#toggle').click(function() {
+           $(this).toggleClass('active');
+           $('#overlay').toggleClass('open');
+          });
+        </script>	
+
+ <script>
+     var text = new Blotter.Text("no one cares about", {
+  family : "'Helvetica', sans-serif",
+  size : 120,
+  fill : "blue",
+  paddingLeft : 50,
+  paddingRight : 50,
+});
+
+var material = new Blotter.FliesMaterial();
+
+material.uniforms.uPointCellWidth.value = 0.015;
+
+material.uniforms.uPointRadius.value = 0.8;
+
+material.uniforms.uSpeed.value = 1.3;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("noonecares");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+     <script>
+     var text = new Blotter.Text("your vacation photos", {
+  family : "'Helvetica', sans-serif",
+  size : 120,
+  fill : "blue",
+  paddingLeft : 50,
+  paddingRight : 50,
+});
+
+var material = new Blotter.FliesMaterial();
+
+material.uniforms.uPointCellWidth.value = 0.015;
+
+material.uniforms.uPointRadius.value = 0.8;
+
+material.uniforms.uSpeed.value = 1.3;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("yourvacation");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+<script>
+     var text = new Blotter.Text("WE CARRY THE PLACES", {
+  family : "'Helvetica', sans-serif",
+  size : 90,
+  fill : "blue",
+  paddingLeft : 30,
+  paddingRight : 30,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .3;
+
+material.uniforms.uVolatility.value = 0.06;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("wecarry");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+    <script>
+     var text = new Blotter.Text("WE OCCUPY", {
+  family : "'Helvetica', sans-serif",
+  size : 90,
+  fill : "blue",
+  paddingLeft : 30,
+  paddingRight : 30,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .2;
+
+material.uniforms.uVolatility.value = 0.05;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("weoccupy");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+
+
+      	<script>
+     var text = new Blotter.Text("NOTHING TWO DIMENSIONAL", {
+  family : "'Helvetica', serif",
+  size : 60,
+  fill : "blue",
+  paddingLeft : 10,
+  paddingRight: 10,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .06;
+
+material.uniforms.uVolatility.value = 0.06;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("nothing");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+    	<script>
+     var text = new Blotter.Text("COULD TAKE IT UP", {
+  family : "'Helvetica', serif",
+  size : 60,
+  fill : "blue",
+  paddingLeft : 10,
+  paddingRight: 10,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .06;
+
+material.uniforms.uVolatility.value = 0.06;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("could");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+
+    	<script>
+     var text = new Blotter.Text("I HAVE NEVER", {
+  family : "'Helvetica', serif",
+  size : 90,
+  fill : "blue",
+  paddingLeft : 20,
+  paddingRight : 20,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .08;
+
+material.uniforms.uVolatility.value = 0.08;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("canyou");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+    
+
+    <script>
+     var text = new Blotter.Text("KNOWN A PLACE", {
+  family : "'Helvetica', serif",
+  size : 90,
+  fill : "blue",
+  paddingLeft : 20,
+  paddingRight : 20,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .08;
+
+material.uniforms.uVolatility.value = 0.08;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("likeyou");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+
+        <script>
+     var text = new Blotter.Text("BY A PICTURE", {
+  family : "'Helvetica', serif",
+  size : 90,
+  fill : "blue",
+  paddingLeft : 20,
+  paddingRight : 20,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .08;
+
+material.uniforms.uVolatility.value = 0.05;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("curveof");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+<script>
+     var text = new Blotter.Text("U R HERE", {
+  family : "'Helvetica', sans-serif",
+  size : 150,
+  fill : "blue",
+  paddingLeft : 100,
+  paddingRight : 100,
+});
+
+var material = new Blotter.FliesMaterial();
+
+material.uniforms.uPointCellWidth.value = 0.018;
+
+material.uniforms.uPointRadius.value = 0.8;
+
+material.uniforms.uSpeed.value = 2;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("urhere");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+     <script>
+     var text = new Blotter.Text("MY FINGERPRINT IS", {
+  family : "'Helvetica', serif",
+  size : 60,
+  fill : "blue",
+  paddingLeft : 10,
+  paddingRight : 10,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .07;
+
+material.uniforms.uVolatility.value = 0.08;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("myfinger");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+         <script>
+     var text = new Blotter.Text("A STRANGER", {
+  family : "'Helvetica', serif",
+  size : 60,
+  fill : "blue",
+  paddingLeft : 10,
+  paddingRight : 10,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+
+material.uniforms.uSpeed.value = .07;
+
+material.uniforms.uVolatility.value = 0.08;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+
+var elem = document.getElementById("astranger");
+var scope = blotter.forText(text);
+
+scope.appendTo(elem);
+    </script>
+
+
+    
+</body>
+</html>
